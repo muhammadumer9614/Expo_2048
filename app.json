@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "expo_2048",
+    "slug": "expo_2048",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
