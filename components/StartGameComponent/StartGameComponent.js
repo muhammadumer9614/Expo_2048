@@ -65,7 +65,7 @@ export function StartGameComponent(props) {
             setSize={setSize}
           />
         </View> */}
-        <View
+        {/* <View
           style={{
             flexDirection: "row",
             marginTop: 10,
@@ -89,7 +89,7 @@ export function StartGameComponent(props) {
               <MaterialCommunityIcons name="circle-box" size={50} />
             </TouchableOpacity>
           </View>
-        </View>
+        </View> */}
         {gameStarted ? (
           <View>
             {/* for play button */}
