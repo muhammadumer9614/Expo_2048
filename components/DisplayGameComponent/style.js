@@ -17,13 +17,13 @@ export const styled = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     backgroundColor: "white",
-    // borderColor: "red",
-    // borderWidth: 4,
-    borderRadius: 50,
-    height: 80,
+    borderColor: "#406CE1",
+    borderWidth: 3,
+    borderRadius: 25,
+    height: 100,
     width: "100%",
     // marginTop: -22,
-    marginBottom: -20,
+    // marginBottom: -20,
     elevation: 6,
 
     // backgroundColor: "yellow",
@@ -35,8 +35,10 @@ export const styled = StyleSheet.create({
   },
   scoreBoxText: {
     textAlign: "center",
-    color: "grey",
+    color: "#C3C3C3",
     fontSize: 13,
+    fontWeight: 'bold',
+    textDecorationLine:'underline'
   },
   swipeStyle: {
     ...flex,
@@ -51,7 +53,7 @@ export const styled = StyleSheet.create({
     // borderColor: "pink",
     ...flex,
     justifyContent: "center",
-    marginTop: 12,
+    marginTop: 21,
 
     // borderRadius: 10,
     // marginTop: 2,

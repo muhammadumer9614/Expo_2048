@@ -14,14 +14,14 @@ import {
   getBackSize,
 } from "./helpers/helpers";
 import { generateArrayWithTwoRandoms } from "./services/services";
-// import { AsyncStorage } from "react-native";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import { NavigationContainer, useBackButton } from "@react-navigation/native";
 
 const Stack = createNativeStackNavigator();
 export default function App() {
   const [displaySize, setDisplaySize] = useState(SIZE_TITLES[0]);
-  console.log("SIZE TITLES IS : ", SIZE_TITLES);
+  // console.log("SIZE TITLES IS : ", SIZE_TITLES);
   const [size, setSize] = useState(4);
 
   const [score, setScore] = useState(0);
@@ -30,12 +30,12 @@ export default function App() {
 
   const [gameArray, setGameArray] = useState(array);
   const [gameStarted, setGameStarted] = useState(true);
-  console.log("array in appjs", gameArray);
+  // console.log("array in appjs", gameArray);
 
   const retrieveData = async (size) => {
     try {
       const value = JSON.parse(await AsyncStorage.getItem(`${size}`));
-      console.log("size", value);
+      // console.log("size", value);
       if (value !== null) {
         return value;
       }
@@ -62,7 +62,7 @@ export default function App() {
   useEffect(() => {
     async function getData() {
       const data = await retrieveData(size);
-      console.log("----------", data);
+      // console.log("----------", data);
       if (data && data.gameArray) {
         setGameArray(data.gameArray);
         if (data.score) {
@@ -73,8 +73,8 @@ export default function App() {
         }
         console.log("score apps", score);
         setGameStarted(true);
-        // } else {
-        //   generateNew();
+        } else {
+          generateNew();
       }
     }
     getData();
@@ -96,7 +96,6 @@ export default function App() {
             />
           )}
         </Stack.Screen>
-        {/* {_setWallpaper()} */}
         <Stack.Screen name="Game" options={{ headerShown: false }}>
           {(props) => (
             <DisplayGameComponent
